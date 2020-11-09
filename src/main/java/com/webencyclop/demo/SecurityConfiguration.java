@@ -3,45 +3,25 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import sun.security.provider.MD5;
-
-import static com.webencyclop.demo.WebMvcConfig.getMd5;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+//	@Autowired
+//	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 //	private MD5PasswordEncoderByHgb MD5PasswordEncoderByHgb;
-
-
-//	public PasswordEncoder passwordEncoder() {
-//		return new PasswordEncoder() {
-//			@Override
-//			public String encode(CharSequence charSequence) {
-//				return getMd5(charSequence.toString());
-//			}
-//
-//			@Override
-//			public boolean matches(CharSequence charSequence, String s) {
-//				return getMd5(charSequence.toString()).equals(s);
-//			}
-//		};
-//	}
 
 	@Autowired
 	private DataSource dataSource;
@@ -54,8 +34,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder amb) throws Exception {
-		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).authoritiesByUsernameQuery(rolesQuery)
-				.dataSource(dataSource).passwordEncoder(passwordEncoder);
+//		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).authoritiesByUsernameQuery(rolesQuery).
+//				dataSource(dataSource).passwordEncoder(passwordEncoder);
+		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).dataSource(dataSource).passwordEncoder(passwordEncoder)
+				.authoritiesByUsernameQuery(rolesQuery).dataSource(dataSource).passwordEncoder(passwordEncoder);
 	}
 
 	@Override
