@@ -21,7 +21,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-//	private MD5PasswordEncoderByHgb MD5PasswordEncoderByHgb;
 
 	@Autowired
 	private DataSource dataSource;
@@ -34,10 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder amb) throws Exception {
-//		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).authoritiesByUsernameQuery(rolesQuery).
-//				dataSource(dataSource).passwordEncoder(passwordEncoder);
-		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).dataSource(dataSource).passwordEncoder(passwordEncoder)
-				.authoritiesByUsernameQuery(rolesQuery).dataSource(dataSource).passwordEncoder(passwordEncoder);
+		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).authoritiesByUsernameQuery(rolesQuery).
+				dataSource(dataSource).passwordEncoder(passwordEncoder);
+//		amb.jdbcAuthentication().usersByUsernameQuery(usersQuery).dataSource(dataSource).passwordEncoder(passwordEncoder)
+//				.authoritiesByUsernameQuery(rolesQuery).dataSource(dataSource);
 	}
 
 	@Override

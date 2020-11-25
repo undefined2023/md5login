@@ -8,11 +8,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 
-//		String md5 = WebMvcConfig.getMd5("hgb930207");
-//		System.out.println(md5);
-//		if (true) return;
-
 		SpringApplication.run(DemoApplication.class, args);
 
 	}
+
 }

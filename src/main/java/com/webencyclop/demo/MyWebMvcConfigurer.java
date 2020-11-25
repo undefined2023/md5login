@@ -47,7 +47,7 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer{
 			BigInteger no = new BigInteger(1, messageDigest);
 
 			// Convert message digest into hex value
-			String hashtext = no.toString(16);
+			String hashtext = no.toString(16).toUpperCase();
 
 			while (hashtext.length() < 32) {
 				hashtext = "0" + hashtext;
