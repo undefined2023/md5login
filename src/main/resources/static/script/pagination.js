@@ -1,3 +1,4 @@
+
 // json arrays as line data
 var tableData = [
 
@@ -204,19 +205,19 @@ var tableData = [
 
 ]
 
-
 /*
-	1 - Loop Through Array & Access each value
-    2 - Create Table Rows & append to table
+	1 - loop through json array and access each value
+    2 - create table rows <tr> and append to table <table>
 */
 
-// declare a javascript object
+// declare a javascript object as
 var state = {
     'querySet': tableData,
-    'page': 1, // 加载页面后默认显示的页数
-    'rows': 15,
-    'window': 5, //  ?
+    'page': 1, // 加载页面后，默认显示的页号
+    'rows': 7, // 每页显示的行数
+    'window': 5, // 底下显示的页号按钮个数?
 }
+
 
 $(document).ready(function(){
   $("#pagination-wrapper > button").click(function(){
@@ -224,12 +225,10 @@ $(document).ready(function(){
   });
 });
 
+buildTable() // 初始化，默认先显示第一页
 
-buildTable() ////////////////////// 初始化，默认先显示第一页
-
-
+// 计算分页信息
 function pagination(querySet, page, rows) {
-    // 计算 分页信息
 
     var trimStart = (page - 1) * rows // 计算得出 当前页的第一条数据 的索引值
     var trimEnd = trimStart + rows
@@ -245,12 +244,17 @@ function pagination(querySet, page, rows) {
 
 }
 
+// 根据总页数生成分页按钮
 function pageButtons(pages) {
-    // 根据 总页数 重新生成 分页按钮
 
-    var wrapper = document.getElementById('pagination-wrapper')
+    var wrapper = document.getElementById('pagination-wrapper') // 根据id获取到html页面的特定tag
 
     wrapper.innerHTML = ``
+
+    // for (var page = 1; page <= pages; page ++) {
+    //     wrapper.innerHTML += '<button value=${page} class="page btn btn-sm btn-info">${page}</button>'
+    // }
+
     console.log('Pages:', pages)
 
     var maxLeft = (state.page - Math.floor(state.window / 2))
@@ -264,24 +268,24 @@ function pageButtons(pages) {
     if (maxRight > pages) {
         maxLeft = pages - (state.window - 1)
 
+        maxRight = pages
+
         if (maxLeft < 1) {
             maxLeft = 1
         }
-        maxRight = pages
     }
-
 
     // add pagination buttons
     for (var page = maxLeft; page <= maxRight; page++) {
-        wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-info">${page}</button>` // style="color: white"
+        wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-info" style="background-color: #0c4d89; border-color: white">${page}</button>` // style="color: white"
     }
     // 首页左边加“《”
     if (state.page != 1) {
-        wrapper.innerHTML = `<button value=${1} class="page btn btn-sm btn-info">&#171; 首页</button>` + wrapper.innerHTML
+        wrapper.innerHTML = `<button value=${1} class="page btn btn-sm btn-info" style="background-color: #0c4d89; border-color:white">&#171; 首页</button>` + wrapper.innerHTML
     }
     // 尾页右边加“》”
     if (state.page != pages) {
-        wrapper.innerHTML += `<button value=${pages} class="page btn btn-sm btn-info">尾页 &#187;</button>`
+        wrapper.innerHTML += `<button value=${pages} class="page btn btn-sm btn-info" style="background-color: #0c4d89; border-color:white">尾页 &#187;</button>`
     }
 
     // 点击某一页的时候，替换数据行
@@ -297,7 +301,6 @@ function pageButtons(pages) {
         ///$(this).setAttribute('style', 'background-color: red;')
         // this.setAttribute('style', 'color: black;')
 
-
     })
 
 }
@@ -311,7 +314,8 @@ function buildTable() {
 
     var myList = data.querySet
 
-    for (var i = 1 in myList) {
+    var i = 1
+    for (i in myList) {
 
         var row = `<tr>
                   <td>${myList[i].filename}</td>

@@ -1,4 +1,4 @@
-package com.webencyclop.demo.model;
+package com.webencyclop.demo.model.neverused;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

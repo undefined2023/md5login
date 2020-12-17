@@ -12,10 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.webencyclop.demo.model.User;
-
 @Controller
 public class AuthenticationController {
+
+	@RequestMapping(value = { "/showimg" }, method = RequestMethod.GET)
+	public ModelAndView showimg() {
+		ModelAndView modelAndView = new ModelAndView("showimg");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = { "/pagination" }, method = RequestMethod.GET)
+	public ModelAndView pagination() {
+		ModelAndView modelAndView = new ModelAndView("pagination");
+		return modelAndView;
+	}
 
 	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
 	public ModelAndView login() {
