@@ -1,8 +1,11 @@
 package com.webencyclop.demo.security;
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
@@ -26,12 +29,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	public static String username = "用户名_";
 
-
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
 	@Autowired
+//	@Qualifier("mysqlDataSource")
+	@Resource(name = "sqlserverDatasource")
 	private DataSource dataSource;
+
 
 	@Value("${spring.queries.users-query}")
 	private String usersQuery;

@@ -1,13 +1,13 @@
 
 
 
-create table file(
+create table fileinfo(
 	id int not null auto_increment,
 	name varchar(255) not null,
 	size int not null,
-	upload_date date not null,
+	upload_date DATETIME DEFAULT CURRENT_TIMESTAMP,
 	uploader_username varchar(255) not null,
-	approver_id_username varchar(255),
+	approver_username varchar(255),
 	approved boolean default false,
 	primary key (id)
 )
@@ -20,3 +20,32 @@ values('file001', 1000111, '2020-12-17', 'heguangbin')
 select * from file
 
 rename table file to fileinfo
+
+
+alter table fileinfo
+change approver_id_username approver_username varchar(255) default null
+
+
+-- 以下datetime的定义需要5.6.5以上mysql才支持
+create table fileinfo(
+	id int not null auto_increment,
+	name varchar(255) not null,
+	size int not null,
+	upload_date DATETIME DEFAULT CURRENT_TIMESTAMP, ------------- 我们服务器上的5.1.73不支持
+	uploader_username varchar(255) not null,
+	approver_username varchar(255),
+	approved boolean default false,
+	primary key (id)
+)
+
+-- 所以date改成timestamp算了
+create table fileinfo(
+	id int not null auto_increment,
+	name varchar(255) not null,
+	size int not null,
+	upload_date timestamp DEFAULT CURRENT_TIMESTAMP,
+	uploader_username varchar(255) not null,
+	approver_username varchar(255),
+	approved boolean default false,
+	primary key (id)
+)
