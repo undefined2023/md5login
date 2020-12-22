@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+
+    <link href="../../styles/explorer.css" rel="stylesheet" type="text/css">
+    <link href="../../styles/alpha.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/disk-system/css/alpha.css?t=1587277018749">-->
+    <link href="../../styles/function.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/base/css/function.css?t=1588154562498">-->
+    <link href="../../styles/context-all_2b14e94.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/system-core/pkg/context-all_2b14e94.css">-->
+    <link href="../../styles/all_52b0158.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/disk-system/pkg/all_52b0158.css">-->
+    <link href="../../styles/home-all_0417883.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/disk-system/pkg/home-all_0417883.css">-->
+    <link href="../../styles/main-all_1804208.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/service-widget-1/pkg/main-all_1804208.css">-->
+    <link href="../../styles/activity-all_9a2207b.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/function-widget-1/pkg/activity-all_9a2207b.css">-->
+    <link href="../../styles/sync-all_100ebfc.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/function-widget-1/pkg/sync-all_100ebfc.css">-->
+    <link href="../../styles/upDataTips-all_f08b64f.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/function-widget-1/pkg/upDataTips-all_f08b64f.css">-->
+    <link href="../../styles/asideAppDownloads-all_9e09c9a.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/interface-widget-1/pkg/asideAppDownloads-all_9e09c9a.css">-->
+    <link href="../../styles/sync-all_6df50b9.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/interface-widget-1/pkg/sync-all_6df50b9.css">-->
+    <link href="../../styles/activity_26dfb4a.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/interface-widget-1/mainSmallBanner/util/activity_26dfb4a.css">-->
+    <link href="../../styles/quota-all_6785087.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/interface-widget-1/pkg/quota-all_6785087.css">-->
+    <link href="../../styles/vipWarn-all_2f77222.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/interface-widget-1/pkg/vipWarn-all_2f77222.css">-->
+    <link href="../../styles/uploader-all_886e186.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/disk-system/pkg/uploader-all_886e186.css">-->
+    <link href="../../styles/rMenu_af343fe.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/system-core/system/uiService/rMenu/rMenu_af343fe.css">-->
+    <link href="../../styles/disk.header.css" rel="stylesheet" type="text/css">
+    <!--    <link rel="stylesheet" type="text/css" href="/box-static/disk-header/disk.header.css?t=1585919416869">-->
+</head>
+
+
+<body>
+<link href="../../styles/cover.css" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" type="text/css" href="/box-static/disk-system/css/cover.css?t=1587277018749">-->
+<link href="../../styles/diskSystem-theme.css" node-type="theme-link" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" node-type="theme-link" type="text/css" href="/box-static/disk-theme/theme/white/diskSystem-theme.css">-->
+
+
+<div class="frame-all" id="layoutApp">
+
+
+    <div class="skin-main"></div>
+    <div class="yuzkp0F" node-type="yuzkp0F">
+        <div class="jebtcnYj" node-type="jebtcnYj">
+            <div class="zEx7va" node-type="zEx7va">
+                <div class="4uv64A" node-type="4uv64A">
+                    <div class="frame-aside" id="layoutAside">
+                        <div class="NJQzbg" node-type="NJQzbg">
+                            <div class="module-aside DtJtsC" node-type="rhr6QW">
+
+                                <div class="KHbQCub"></div>
+
+
+                                <ul class="fOHAbxb">
+
+                                    <li class="wpB2an bHzsaPb" data-key="list" node-type="qcqrmO4">
+
+                                        <a class="juRGOx ddkhrnMY" hidefocus="true" href="upload" node-type="gcmlBeD8"
+                                           path="/" style="color: #09aaff">
+
+                                        <span class="text">
+                                        <span class="icon icon-disk" node-type="dxRxVX"></span>
+                                        <span node-type="skur8eq">上传文件</span>
+                                        </span>
+
+                                        </a>
+
+                                    </li>
+
+                                    <li class="wpB2an" data-key="pic" node-type="qcqrmO4">
+
+                                        <a class="ddkhrnMY" hidefocus="true" href="approving" node-type="gcmlBeD8">
+
+                                            <span class="text">
+                                            <span node-type="skur8eq">审批中</span>
+                                            </span>
+
+                                        </a>
+
+
+                                    </li>
+
+                                    <li class="wpB2an" data-key="doc" node-type="qcqrmO4">
+
+                                        <a cat="4" class="ddkhrnMY" hidefocus="true" href="approved"
+                                           node-type="gcmlBeD8">
+
+                                            <span class="text">
+                                            <span node-type="skur8eq">审批完成</span>
+                                            </span>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="q7L6A5P" node-type="q7L6A5P">
+                <div class="r9QDNp" node-type="r9QDNp">
+                    <div class="frame-main" id="layoutMain" style="display: block;">
+                        <div class="iWN5Hq" node-type="iWN5Hq">
+                            <div class="fIGURYO" node-type="fIGURYO">
+                                <div class="ExBMUT7" node-type="ExBMUT7">
+                                    <!--[if IE]>
+                                    <iframe id="historyIFrameEmulator" style="display: none"></iframe><![endif]-->
+                                    <div class="KPDwCE" node-type="KPDwCE">
+                                        <td align=center style="HEIGHT: 100%" vAlign=top>
+                                            <TABLE border=0 cellPadding=0 cellSpacing=0 id=ctl00_tblContent width="95%">
+                                                <TBODY>
+                                                <tr>
+                                                    <td vAlign=top>
+                                                        <TABLE border=0 cellPadding=0 cellSpacing=0 style="WIDTH: 100%">
+                                                            <TBODY>
+                                                            <tr>
+                                                                <td style="HEIGHT: 10px">
+                                                                    <DIV class=tagsOne id=tags_One><SPAN
+                                                                            class=tagsL></SPAN><SPAN
+                                                                            class=tagsM
+                                                                            id=ctl00_EditPageTitle1_lblTitle>上传流程</SPAN><SPAN
+                                                                            class=tagsR></SPAN>
+                                                                    </DIV>
+                                                                    <SCRIPT language=javascript>
+                                                                        function selplm(refresh)//打开选择窗口
+                                                                        {
+                                                                            var w;
+                                                                            var h;
+                                                                            w = 570; //宽度
+                                                                            h = (window.screen.availHeight - 70); //高度
+                                                                            openpage("/ioffice/prg/fl/flPLMSel.aspx?closed=1&refresh=" + refresh, w, h, "选取PLM产品");
+                                                                        }
+
+                                                                    </SCRIPT>
+                                                                    <TABLE border=10 cellPadding=0 cellSpacing=0
+                                                                           class=box style="WIDTH: 100%">
+                                                                        <TBODY>
+                                                                        <tr>
+                                                                            <td class=box_td noWrap>
+                                                                                <DIV id=ctl00_cntForm_updatePanel2>
+                                                                                    <TABLE border=0
+                                                                                           cellPadding=0
+                                                                                           cellSpacing=0
+                                                                                           style="PADDING-BOTTOM: 3px; PADDING-TOP: 3px"
+                                                                                           width="100%">
+                                                                                        <TBODY>
+                                                                                        <tr class=box_edit_tr>
+
+                                                                                            <td noWrap
+                                                                                                style="WIDTH: 70px"><SPAN
+                                                                                                    id=ctl00_cntForm_lblTitle>标 题</SPAN>
+                                                                                                <SPAN
+                                                                                                        class=td
+                                                                                                        controltovalidate="ctl00_cntForm_txtTitle"
+                                                                                                        errormessage="[标题]必须输入！"
+                                                                                                        id=ctl00_cntForm_rfvTitle
+                                                                                                        initialvalue
+                                                                                                        isvalid="true"
+                                                                                                        style="COLOR: red; VISIBILITY: hidden">*</SPAN>
+                                                                                            </td>
+
+                                                                                            <td>
+                                                                                                <INPUT
+                                                                                                        class=edbox
+                                                                                                        id=ctl00_cntForm_txtTitle
+                                                                                                        name=ctl00$cntForm$txtTitle
+                                                                                                        style="WIDTH: 264px;"
+                                                                                                        value=上传文件20200506>
+                                                                                                <!--readOnly-->
+                                                                                                <INPUT
+                                                                                                        id=ctl00_cntForm_ioTextBoxWatermrak1_TextBoxWatermarkExtender1_ClientState
+                                                                                                        name=ctl00$cntForm$ioTextBoxWatermrak1$TextBoxWatermarkExtender1_ClientState
+                                                                                                        type=hidden>
+                                                                                            </td>
+
+                                                                                        </TR>
+
+                                                                                        <tr class=box_edit_tr>
+                                                                                            <td noWrap
+                                                                                                style="WIDTH: 70px"><SPAN
+                                                                                                    id=ctl00_cntForm_lblSubTitle>副标题</SPAN>
+                                                                                            </td>
+                                                                                            <td><INPUT
+                                                                                                    class=edbox
+                                                                                                    id=ctl00_cntForm_txtSubTitle
+                                                                                                    name=ctl00$cntForm$txtSubTitle
+                                                                                                    style="WIDTH: 264px">
+                                                                                            </td>
+                                                                                        </TR>
+                                                                                        </TBODY>
+                                                                                    </TABLE>
+                                                                                </DIV>
+
+
+                                                                                <DIV>
+
+                                                                                    <textarea
+                                                                                            style="width: 700px; height: 200px"></textarea>
+
+                                                                                </DIV>
+
+
+                                                                                <SCRIPT language=javascript>
+                                                                                    function openflow(url) {
+                                                                                        var flowinf = window.open(escapecnurl(url), "flow", "toolbar=no,status=yes,resizable=yes,scrollbars=yes")
+                                                                                        flowinf.moveTo(20, 20)
+                                                                                        flowinf.resizeTo(630, screen.availHeight - 70)
+                                                                                        flowinf.focus()
+                                                                                    }
+                                                                                </SCRIPT>
+
+                                                                                <DIV id=ctl00_cntForm_IoUpdatePanel1></DIV>
+
+                                                                                <DIV id=ctl00_cntForm_upFKDoc>
+                                                                                    <TABLE border=0
+                                                                                           cellPadding=0
+                                                                                           cellSpacing=0
+                                                                                           style="MARGIN-BOTTOM: 10px; MARGIN-TOP: 10px"
+                                                                                           width="100%">
+                                                                                        <TBODY></TBODY>
+                                                                                    </TABLE>
+                                                                                </DIV>
+
+                                                                                <DIV id=ctl00_cntForm_IoFieldShow1_panControl>
+                                                                                    <TABLE border=0 cellPadding=0
+                                                                                           cellSpacing=0 width="100%">
+                                                                                        <TBODY></TBODY>
+                                                                                    </TABLE>
+                                                                                </DIV>
+
+
+                                                                                <DIV id=ctl00_cntForm_UpdatePanel1></DIV>
+                                                                                <SCRIPT language=javascript
+                                                                                        src="/iOffice/js/iOffice.js"></SCRIPT>
+                                                                                <SCRIPT language=javascript>
+                                                                                    function openflow(url) {
+                                                                                        var flowinf = window.open(escapecnurl(url), "flow", "toolbar=no,status=yes,resizable=yes,scrollbars=yes,left=20,top=20,width=630,height=" + (screen.availHeight - 70));
+                                                                                        flowinf.focus();
+                                                                                    }
+
+                                                                                    function openmemo(docid) {
+                                                                                        var flowinf = window.open("/iOffice/prg/set/Flow/FlowContMemo.aspx?docid=" + docid, "flow", "toolbar=yes,status=yes,resizable=yes,scrollbars=yes,left=20,top=20,width=630,height=" + (screen.availHeight - 70));
+                                                                                        flowinf.focus();
+                                                                                    }
+
+                                                                                    //打开上传附件页面
+                                                                                    function openselfile(mode, modeid, name, savetodb, secflag) {
+                                                                                        if (isSpace(secflag)) {
+                                                                                            secflag = '-1';
+                                                                                        }
+                                                                                        openpage1("/iOffice/prg/set/iocom/ioFileUpload.aspx?mode=" + mode + "&modeid=" + modeid + "&name=" + name + "&savetodb=" + savetodb + "&secflag=" + secflag, 500, 320);
+                                                                                    }
+
+                                                                                    //打开附件
+                                                                                    function openfile(url) {
+
+                                                                                        openpage(url, window.screen.availWidth - 20, window.screen.availHeight - 60);
+
+                                                                                    }
+
+                                                                                    function openflowdraw(url) {
+                                                                                        var flowinf = window.open(escapecnurl(url), "flowdraw", "toolbar=no,status=yes,resizable=yes,scrollbars=yes,left=0,top=0,width=" + (screen.availWidth - 10) + ",height=" + (screen.availHeight - 70));
+                                                                                        flowinf.focus();
+                                                                                    }
+
+                                                                                    function openfileedit(url) {
+                                                                                        openpage(url, window.screen.availWidth - 20, window.screen.availHeight - 60);
+                                                                                    }
+
+                                                                                    //附件复制到公用文档私有文件夹
+                                                                                    function openmove(fileid) {
+                                                                                        var pwdfrm = window.open("/iOffice/prg/fm/fmSelFolder.aspx?fileid=" + fileid, "tr", "scrollbars=no status=no menubar=no resizable=1,width=680,height=510");
+                                                                                        pwdfrm.moveTo((window.screen.availWidth - 680) / 2, (window.screen.availHeight - 510) / 2)
+                                                                                        pwdfrm.resizeTo(680, 550)
+                                                                                        pwdfrm.focus();
+                                                                                        return false;
+                                                                                    }
+                                                                                </SCRIPT>
+                                                                                <TABLE border=0 cellPadding=0
+                                                                                       cellSpacing=0 id=Table1
+                                                                                       width="100%">
+                                                                                    <TBODY>
+                                                                                    <tr>
+                                                                                        <td align=right>
+                                                                                            <TABLE border=0
+                                                                                                   cellPadding=0
+                                                                                                   cellSpacing=0
+                                                                                                   id=ctl00_cntForm_FlowCont1_tblFile
+                                                                                                   width="100%">
+                                                                                                <TBODY>
+                                                                                                <tr>
+                                                                                                    <td id=ctl00_cntForm_FlowCont1_TD1>
+                                                                                                        <TABLE border=0
+                                                                                                               cellPadding=0
+                                                                                                               cellSpacing=0
+                                                                                                               id=Table4
+                                                                                                               width="100%">
+                                                                                                            <TBODY>
+                                                                                                            <tr>
+                                                                                                                <td>
+                                                                                                                    <TABLE border=0
+                                                                                                                           cellPadding=0
+                                                                                                                           cellSpacing=0
+                                                                                                                           class=box_fold
+                                                                                                                           id=ctl00_cntForm_FlowCont1_tblFileInf
+                                                                                                                           width="100%">
+                                                                                                                        <TBODY>
+
+                                                                                                                        <tr class=box_fold_tr>
+
+                                                                                                                            <td noWrap>
+
+                                                                                                                                <div id=ctl00_cntForm_FlowCont1_IoUpdatePanel2>
+
+                                                                                                                                    <A class=td
+                                                                                                                                       href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$cntForm$FlowCont1$cmdAddFile", "", true, "", "", false, true))'
+                                                                                                                                       id=ctl00_cntForm_FlowCont1_cmdAddFile>
+                                                                                                                                        <IMG align=absBottom
+                                                                                                                                             border=0
+                                                                                                                                             src="../../resource/add.gif">新增附件</A>
+
+                                                                                                                                </div>
+
+                                                                                                                                <div align=right
+                                                                                                                                     style="HEIGHT: 10px"></div>
+
+                                                                                                                                <div id=ctl00_cntForm_FlowCont1_UpdatePanel2>
+                                                                                                                                    附件信息
+                                                                                                                                </div>
+
+                                                                                                                            </td>
+
+                                                                                                                        </TR>
+
+                                                                                                                        <tr>
+
+                                                                                                                            <td class=box_td
+                                                                                                                                colSpan=3>
+                                                                                                                                <TABLE border=0
+                                                                                                                                       cellPadding=0
+                                                                                                                                       cellSpacing=0
+                                                                                                                                       id=ctl00_cntForm_FlowCont1_tblFold
+                                                                                                                                       style="DISPLAY: block"
+                                                                                                                                       width="100%">
+                                                                                                                                    <TBODY>
+                                                                                                                                    <tr>
+                                                                                                                                        <td>
+                                                                                                                                            <DIV id=ctl00_cntForm_FlowCont1_upDgdFileInf>
+                                                                                                                                                <TABLE border=1
+                                                                                                                                                       cellSpacing=0
+                                                                                                                                                       class=GridBackColor
+                                                                                                                                                       id=ctl00_cntForm_FlowCont1_dgdFileInf
+                                                                                                                                                       rules=all
+                                                                                                                                                       style="BORDER-COLLAPSE: collapse; WIDTH: 100%">
+                                                                                                                                                    <TBODY>
+                                                                                                                                                    <tr class=GridHeadBackColor
+                                                                                                                                                        style="WHITE-SPACE: nowrap">
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            名称
+                                                                                                                                                        </td>
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            姓名
+                                                                                                                                                        </td>
+                                                                                                                                                        <td align=center
+                                                                                                                                                            style="WHITE-SPACE: nowrap">
+                                                                                                                                                            大小
+                                                                                                                                                        </td>
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            备注
+                                                                                                                                                        </td>
+                                                                                                                                                        <td align=center
+                                                                                                                                                            style="WHITE-SPACE: nowrap">
+                                                                                                                                                            创建时间
+                                                                                                                                                        </td>
+                                                                                                                                                    </TR>
+
+                                                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}"
+                                                                                                                                                        style="WHITE-SPACE: nowrap">
+
+                                                                                                                                                        <td>
+                                                                                                                                                            <A class=td
+                                                                                                                                                               href="javascript:openfile('/iOffice/prg/set/ioCom/ioFileDown.aspx?FileID=497799&amp;CheckGuid=5c30db1e-125d-4d03-ab8f-09442fe791a3&amp;Mode=wmFlowDoc');">
+                                                                                                                                                                     align=absMiddle
+                                                                                                                                                                     border=0>
+                                                                                                                                                                20200506宝鼎山、大冷山、连州.PDF</A>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            <span>侯鑫威</span>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center
+                                                                                                                                                            style="WHITE-SPACE: nowrap">
+                                                                                                                                                            779.94
+                                                                                                                                                            KB
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td>
+                                                                                                                                                            <SPAN class=err
+                                                                                                                                                                  id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl02_Label1></SPAN><SPAN
+                                                                                                                                                                class=err
+                                                                                                                                                                id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl02_Label2></SPAN><SPAN
+                                                                                                                                                                id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl02_Label4></SPAN>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center>
+                                                                                                                                                            2020-05-06
+                                                                                                                                                            14:39
+                                                                                                                                                        </td>
+
+                                                                                                                                                    </TR>
+
+                                                                                                                                                    <tr
+                                                                                                                                                        bgColor=#ffffff
+                                                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}"
+                                                                                                                                                        style="WHITE-SPACE: nowrap">
+
+                                                                                                                                                        <td>
+                                                                                                                                                            <A class=td
+                                                                                                                                                               href="javascript:openfile('/iOffice/prg/set/ioCom/ioFileDown.aspx?FileID=497800&amp;CheckGuid=6d710a39-79ed-4ae2-b5b9-264c74d854cc.cab&amp;Mode=wmFlowDoc');">
+                                                                                                                                                                    align=absMiddle"
+                                                                                                                                                                    border=0>
+                                                                                                                                                                20200506宝鼎山、大冷山、连州.xlsx</A>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            <span>侯鑫威</span>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center
+                                                                                                                                                            style="WHITE-SPACE: nowrap">
+                                                                                                                                                            9.51
+                                                                                                                                                            KB
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td>
+                                                                                                                                                                <SPAN class=err
+                                                                                                                                                                      id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl03_Label1></SPAN><SPAN
+                                                                                                                                                                class=err
+                                                                                                                                                                id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl03_Label2></SPAN><SPAN
+                                                                                                                                                                id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl03_Label4></SPAN>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center>
+                                                                                                                                                            2020-05-06
+                                                                                                                                                            14:39
+                                                                                                                                                        </td>
+
+                                                                                                                                                    </TR>
+
+                                                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}"
+                                                                                                                                                        style="WHITE-SPACE: nowrap">
+
+                                                                                                                                                        <td>
+                                                                                                                                                            <A class=td
+                                                                                                                                                               href="javascript:openfile('/iOffice/prg/set/ioCom/ioFileDown.aspx?FileID=497806&amp;CheckGuid=8ba39386-d8b4-4b05-a466-da0ae973af4e.cab&amp;Mode=wmFlowDoc');">
+                                                                                                                                                                    align=absMiddle"
+                                                                                                                                                                    border=0>
+                                                                                                                                                                20200506宝鼎山、大冷山、连州.xlsx</A>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                                                            <span>贺广彬</span>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center
+                                                                                                                                                            style="WHITE-SPACE: nowrap">
+                                                                                                                                                            9.93
+                                                                                                                                                            KB
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td>
+                                                                                                                                                            <SPAN class=err
+                                                                                                                                                                  id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl04_Label1></SPAN>
+                                                                                                                                                            <SPAN class=err
+                                                                                                                                                                  id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl04_Label2></SPAN><SPAN
+                                                                                                                                                                id=ctl00_cntForm_FlowCont1_dgdFileInf_ctl04_Label4></SPAN>
+                                                                                                                                                        </td>
+
+                                                                                                                                                        <td align=center>
+                                                                                                                                                            2020-05-06
+                                                                                                                                                            14:46
+                                                                                                                                                        </td>
+                                                                                                                                                    </TR>
+                                                                                                                                                    </TBODY>
+                                                                                                                                                </TABLE>
+                                                                                                                                            </DIV>
+                                                                                                                                        </td>
+                                                                                                                                    </TR>
+                                                                                                                                    </TBODY>
+                                                                                                                                </TABLE>
+                                                                                                                            </td>
+                                                                                                                        </TR>
+                                                                                                                        </TBODY>
+                                                                                                                    </TABLE>
+                                                                                                                </td>
+                                                                                                            </TR>
+                                                                                                            </TBODY>
+                                                                                                        </TABLE>
+                                                                                                    </td>
+                                                                                                </TR>
+                                                                                                </TBODY>
+                                                                                            </TABLE>
+
+                                                                                    <tr>
+                                                                                        <!--隔开-->
+                                                                                        <td align=right
+                                                                                            style="HEIGHT: 10px"></td>
+                                                                                    </TR>
+
+
+                                                                                    <DIV id=ctl00_cntForm_FlowCont1_UpdatePanel1>
+                                                                                        <TABLE border=0
+                                                                                               cellPadding=0
+                                                                                               cellSpacing=0
+                                                                                               class=box_fold
+                                                                                               id=ctl00_cntForm_FlowCont1_Table2
+                                                                                               style="DISPLAY: block"
+                                                                                               width="100%">
+                                                                                            <TBODY>
+
+                                                                                            <tr class=box_fold_tr>
+
+                                                                                                <td align=left
+                                                                                                    noWrap
+                                                                                                    style="WIDTH: 100%">
+
+                                                                                                    <SPAN class=tttable
+                                                                                                          id=ctl00_cntForm_FlowCont1_lblFlowInf>处理信息</SPAN>
+
+                                                                                                    <SPAN class=td
+                                                                                                          flowContDocCountTime="1"
+                                                                                                          id=ctl00_cntForm_FlowCont1_lblCountTime
+                                                                                                          style="COLOR: red"></SPAN><SPAN
+                                                                                                        class=td
+                                                                                                        id=ctl00_cntForm_FlowCont1_lblArced
+                                                                                                        style="COLOR: red"></SPAN><A
+                                                                                                        href="javascript:__doPostBack('ctl00$cntForm$FlowCont1$cmdrefresh','')"
+                                                                                                        id=ctl00_cntForm_FlowCont1_cmdrefresh
+                                                                                                        style="HEIGHT: 10px; DISPLAY: none; WIDTH: 10px"></A>
+                                                                                                </td>
+                                                                                            </TR>
+                                                                                            <tr>
+                                                                                                <td class=box_td
+                                                                                                    colSpan=2>
+                                                                                                    <TABLE border=0
+                                                                                                           cellPadding=0
+                                                                                                           cellSpacing=0
+                                                                                                           id=ctl00_cntForm_FlowCont1_tblFold1
+                                                                                                           style="DISPLAY: block"
+                                                                                                           width="100%">
+
+                                                                                                        <TBODY>
+
+                                                                                                        <tr>
+                                                                                                            <td colSpan=2>
+                                                                                                                <TABLE border=1
+                                                                                                                       cellSpacing=0
+                                                                                                                       class=GridBackColor0
+                                                                                                                       id=ctl00_cntForm_FlowCont1_dgdFlData
+                                                                                                                       rules=all
+                                                                                                                       style="BORDER-COLLAPSE: collapse; WIDTH: 100%">
+                                                                                                                    <TBODY>
+
+                                                                                                                    <tr class=GridHeadBackColor>
+                                                                                                                        <td style="WHITE-SPACE: nowrap; WIDTH: 1%">
+                                                                                                                            <span>序号</span>
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                            <span>步骤名称</span>
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                            处理人
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                            批复内容
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap; WIDTH: 80px">
+                                                                                                                            备注
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                            <span>提交时间</span>
+                                                                                                                        </td>
+                                                                                                                        <td style="WHITE-SPACE: nowrap">
+                                                                                                                            <span>完毕时间</span>
+                                                                                                                        </td>
+                                                                                                                    </TR>
+
+                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}">
+                                                                                                                        <td align=right
+                                                                                                                            class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            1
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap; FONT-WEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none"
+                                                                                                                            vAlign=top>
+                                                                                                                            <B>1</B>
+                                                                                                                            开始
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <span>侯鑫威</span>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:39
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    <tr bgColor=#ccddee
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}">
+                                                                                                                        <td align=right
+                                                                                                                            class=GridItemTop
+                                                                                                                            rowSpan=2
+                                                                                                                            vAlign=top>
+                                                                                                                            2
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            rowSpan=2
+                                                                                                                            style="WHITE-SPACE: nowrap; FONT-WEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none"
+                                                                                                                            vAlign=top>
+                                                                                                                            <B>2</B>
+                                                                                                                            管理信息化主管审核
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <span>陈建武</span>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            由[贺广彬]代理处理</FONT>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:39
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}">
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <span>贺广彬</span>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            同意
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            代理[<FONT>陈建武</FONT>]
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:39
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:46
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}">
+                                                                                                                        <td align=right
+                                                                                                                            class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            3
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap; FONT-WEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none"
+                                                                                                                            vAlign=top>
+                                                                                                                            <B>2.1</B>
+                                                                                                                            同意
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <A></A>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:46
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}">
+                                                                                                                        <td align=right
+                                                                                                                            class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            4
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap; FONT-WEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none"
+                                                                                                                            vAlign=top>
+                                                                                                                            <B>3</B>
+                                                                                                                            ERP专员执行
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <span>贺广彬</span>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            已办
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:46
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:46
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    <tr bgColor=#ffffff
+                                                                                                                        onclick="javascript:if(this.bgColor=='#ccddee'){this.bgColor='#FFFFFF'}else{this.bgColor='#ccddee';}"
+                                                                                                                        onmouseout="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#FFFFFF';}"
+                                                                                                                        onmouseover="javascript:if(this.bgColor!='#ccddee'){this.bgColor='#eeeeee';}"
+                                                                                                                        style="BACKGROUND-COLOR: lightblue">
+                                                                                                                        <td align=right
+                                                                                                                            class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            5
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap; FONT-WEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none"
+                                                                                                                            vAlign=top>
+                                                                                                                            <B>4</B>
+                                                                                                                            物料打单
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            style="WHITE-SPACE: nowrap"
+                                                                                                                            vAlign=top>
+                                                                                                                            <span>刘胜璟</span>
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            (未开封)
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            2020-05-06
+                                                                                                                            14:46
+                                                                                                                        </td>
+                                                                                                                        <td class=GridItemTop
+                                                                                                                            vAlign=top>
+                                                                                                                            &nbsp;
+                                                                                                                        </td>
+
+                                                                                                                    </TR>
+                                                                                                                    </TBODY>
+                                                                                                                </TABLE>
+                                                                                                            </td>
+                                                                                                        </TR>
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </td>
+                                                                                            </TR>
+                                                                                            </TBODY>
+                                                                                        </TABLE>
+                                                                                    </DIV>
+
+                                                                                    <DIV id=ctl00_cntForm_FlowCont1_IoUpdatePanel1></DIV>
+
+                                                                                    </td>
+
+                                                                                    </TR>
+
+                                                                                    <div align=right
+                                                                                         style="HEIGHT: 20px"></div>
+
+                                                                                    <tr>
+                                                                                        <td noWrap>
+
+                                                                                            <SCRIPT language=javascript>
+                                                                                                function openman(url) {
+                                                                                                    w = 700; //宽度
+                                                                                                    h = 650; //高度
+                                                                                                    var frm = window.open(escapecnurl(url), "flowman", "scrollbars=yes,status=no,menubar=no,resizable=1,width=" + w + ",height=" + h);
+                                                                                                    l = (window.screen.availWidth - w) / 2;
+                                                                                                    t = (window.screen.availHeight - h) / 2;
+                                                                                                    frm.window.moveTo(l, t);
+                                                                                                    frm.window.resizeTo(w, h);
+                                                                                                    frm.focus();
+                                                                                                }
+                                                                                            </SCRIPT>
+
+                                                                                            <A class=btn_edit
+                                                                                               href="javascript:void(0)"
+                                                                                               id=ctl00_cntButton_Flowaction1_cmdSubmit>
+                                                                                                <!--onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cntButton$Flowaction1$cmdSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true));if (typeof(Page_IsValid) != 'undefined'){if(Page_IsValid)this.disabled = true;return false;}else{this.disabled = true;return false;}">-->
+
+                                                                                                <SPAN>提交</SPAN>
+                                                                                            </A>
+
+                                                                                            <A class=btn_edit
+                                                                                               href="javascript:__doPostBack('ctl00$cntButton$cmdExit','')"
+                                                                                               id=ctl00_cntButton_cmdExit>
+                                                                                                <SPAN>退出</SPAN>
+                                                                                            </A>
+
+                                                                                            <DIV id=ctl00_cntButton_upEditBnts></DIV>
+
+                                                                                        </td>
+
+                                                                                    </TR>
+
+                                                                                    </TBODY>
+
+                                                                                </TABLE>
+
+
+                                                                            </td>
+                                                                        </TR>
+                                                                        </TBODY>
+                                                                    </TABLE>
+                                                                </td>
+                                                            </TR>
+                                                            <tr>
+                                                                <td height=10 noWrap></td>
+                                                            </TR>
+
+                                                            </TBODY>
+                                                        </TABLE>
+                                                    </td>
+                                                </TR>
+                                                </TBODY>
+                                            </TABLE>
+                                            <DIV id=ctl00_ValidationSummary1 showmessagebox="True"
+                                                 showsummary="False" style="COLOR: red; DISPLAY: none"></DIV>
+                                        </td>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="T3gwwp" node-type="T3gwwp">
+                <div class="ImM2F0K" node-type="ImM2F0K">
+                    <div class="frame-main" id="layoutServiceHolder" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layoutHeader">
+        <div class="module-header" node-type="module">
+            <div class="module-header-wrapper" node-type="module-header-wrapper" style="height: 62px;">
+
+                <dl class="xtJbHcb">
+
+                    <dt class="EHazOI">
+                        <a href="approving.html" target="_self" title="湘电的风能"></a>
+                    </dt>
+
+                    <dd class="CDaavKb" node-type="header-apps">
+
+                        <span class="DIcOFyb" node-type="app-user-info">
+
+                            <span class="user-photo-box">
+                                <i class="user-photo"></i>
+                                <!--                                   style="background-image:url(img/logo_for_explorer.jpg); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');"></i>-->
+                            </span>
+
+                            <span class="user-name" style="color: white">湘电风能</span>
+
+                        </span>
+
+                    </dd>
+
+                    <dd class="CDaavKb" node-type="header-apps">
+
+                        <span class="DIcOFyb" node-type="app-user-info">
+
+                            <span class="user-photo-box">
+<!--                                <i class="user-photo" style="background-image:url(user_photo.jpg);"></i>-->
+                                <i class="user-photo"><img src="img/user_photo.jpg" th:src="@{images/user_photo.jpg}"></i>
+                            </span>
+
+                            <span th:text="${username}" class="user-name" style="color: white"></span>
+
+                        </span>
+
+                    </dd>
+
+                </dl>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

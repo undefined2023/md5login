@@ -1,19 +1,24 @@
 package com.webencyclop.demo.controller;
 
-import com.webencyclop.demo.security.SecurityConfiguration;
+import com.webencyclop.demo.mappers.MysqlMapper;
+import com.webencyclop.demo.model.mysql.Fileinfo;
 import com.webencyclop.demo.service.UserInfo;
-import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Controller
 public class AuthenticationController {
+
+	@Autowired
+	MysqlMapper mysqlMapper;
 
 	@RequestMapping(value = { "/showimg" }, method = RequestMethod.GET)
 	public ModelAndView showimg() {
@@ -56,8 +61,23 @@ public class AuthenticationController {
 
 	@RequestMapping(value = "/employee/approved", method = RequestMethod.GET)
 	public ModelAndView employeeApproved() {
-		ModelAndView modelAndView = new ModelAndView("employee/approved", "username", UserInfo.getUsername());
+
+		//
+//		WebContext wc = new
+
+		List<Fileinfo> fis = mysqlMapper.getAllFileinfo(); // query
+		List<Map<String, Object>> result = new ArrayList<>();
+		for (Fileinfo fi : fis) {
+			Map<String, Object> model = new HashMap<>();
+			model.put("name", fi.getName());
+			model.put("size", fi.getSize());
+			model.put("upload_date", fi.getUpload_date());
+			result.add(model);
+		}
+
+		ModelAndView modelAndView = new ModelAndView("employee/approved", "result", result);
 		return modelAndView;
+
 	}
 
 	@RequestMapping(value = "/employee/approving", method = RequestMethod.GET)

@@ -1,22 +1,20 @@
 package com.webencyclop.demo.model.mysql;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
 
-@Entity
-@Table(name="fileinfo")
+//@Entity
+//@Table(name="fileinfo")
 public class Fileinfo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
 
     private int size;
 
-    private Timestamp uploadDate;
+    private Timestamp upload_date;
 
     private String uploaderUsername;
 
@@ -26,15 +24,17 @@ public class Fileinfo {
 
     private boolean approved;
 
+    private String fileLocation;
+
     public Fileinfo() {
 
     }
 
-    public Fileinfo(String name, int size, Timestamp uploadDate, String uploaderUsername, String approverUsername) {
+    public Fileinfo(String name, int size, Timestamp upload_date, String uploaderUsername, String approverUsername) {
 
         this.name = name;
         this.size = size;
-        this.uploadDate = uploadDate;
+        this.upload_date = upload_date;
         this.uploaderUsername = uploaderUsername;
         this.approverUsername = approverUsername;
 
@@ -64,12 +64,12 @@ public class Fileinfo {
         this.size = size;
     }
 
-    public Date getUploadDate() {
-        return uploadDate;
+    public Timestamp getUpload_date() {
+        return upload_date;
     }
 
-    public void setUploadDate(Timestamp uploadDate) {
-        this.uploadDate = uploadDate;
+    public void setUpload_date(Timestamp upload_date) {
+        this.upload_date = upload_date;
     }
 
     public String getUploaderUsername() {
@@ -94,6 +94,14 @@ public class Fileinfo {
 
     public void setApproved(boolean approved) {
         this.approved = approved;
+    }
+
+    public String getFileLocation() {
+        return fileLocation;
+    }
+
+    public void setFileLocation(String fileLocation) {
+        this.fileLocation = fileLocation;
     }
 
 
