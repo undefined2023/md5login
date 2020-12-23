@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-public class DatabaseConfiguration {
+public class DatasourceConfigurationAhead {
 
     // bean name
     public static final String MYSQL_DATASOURCE = "mysqlDatasource";
@@ -42,3 +42,25 @@ public class DatabaseConfiguration {
     }
 
 }
+
+/**
+ *
+ * The Concept Of Datasource Versus Database
+ *
+ * A data source is simply something your program relies on to get data.
+ * A database is a kind of data source that persists data to some digitized form.
+ * Other data sources include files, services, etc — these all provide data to your programs.
+ *
+ * Databases
+ * - SQL
+ * - Oracle
+ * - MySQL
+ *
+ * Data Sources
+ * - All of the databases above
+ * - XML Files
+ * - CSV Files
+ * - Web Services
+ * - and many many more..
+ *
+ */

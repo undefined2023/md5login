@@ -61,7 +61,26 @@
                         <div class="NJQzbg" node-type="NJQzbg">
                             <div class="module-aside DtJtsC" node-type="rhr6QW">
 
-                                <div class="KHbQCub"></div>
+                                <div class="KHbQCub">
+
+                                    <ul class="fOHAbxb" style="position: fixed; bottom: 0; width: 100%;">
+
+                                        <li class="wpB2an" data-key="doc" node-type="qcqrmO4">
+
+                                            <a cat="4" class="ddkhrnMY" hidefocus="true" href="/logout"
+                                               node-type="gcmlBeD8">
+
+                                            <span class="text">
+                                            <span node-type="skur8eq">登出</span>
+                                            </span>
+
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+
+                                </div>
 
 
                                 <ul class="fOHAbxb">
@@ -336,11 +355,12 @@
                                                                                                                                 <div id=ctl00_cntForm_FlowCont1_IoUpdatePanel2>
 
                                                                                                                                     <A class=td
-                                                                                                                                       href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$cntForm$FlowCont1$cmdAddFile", "", true, "", "", false, true))'
+                                                                                                                                       href='/uploadview'
+                                                                                                                                       target="_blank"
                                                                                                                                        id=ctl00_cntForm_FlowCont1_cmdAddFile>
                                                                                                                                         <IMG align=absBottom
                                                                                                                                              border=0
-                                                                                                                                             src="../../resource/add.gif">新增附件</A>
+                                                                                                                                             src="../img/add.gif">新增附件</A>
 
                                                                                                                                 </div>
 
@@ -930,6 +950,13 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div>
+
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -956,8 +983,7 @@
                         <span class="DIcOFyb" node-type="app-user-info">
 
                             <span class="user-photo-box">
-                                <i class="user-photo"></i>
-                                <!--                                   style="background-image:url(img/logo_for_explorer.jpg); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');"></i>-->
+                                <i class="user-photo" style="background-image:url(../img/logo_for_explorer.jpg); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');"></i>
                             </span>
 
                             <span class="user-name" style="color: white">湘电风能</span>
@@ -972,7 +998,7 @@
 
                             <span class="user-photo-box">
 <!--                                <i class="user-photo" style="background-image:url(user_photo.jpg);"></i>-->
-                                <i class="user-photo"><img src="img/user_photo.jpg" th:src="@{images/user_photo.jpg}"></i>
+                                <i class="user-photo" style="background-image:url(../img/user_photo.jpg);"></i>
                             </span>
 
                             <span th:text="${username}" class="user-name" style="color: white"></span>

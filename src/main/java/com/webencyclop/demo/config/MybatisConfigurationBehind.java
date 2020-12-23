@@ -13,7 +13,7 @@ import javax.inject.Named;
 import javax.sql.DataSource;
 
 @Configuration
-public class MyBatisConfiguration {
+public class MybatisConfigurationBehind {
 
     // bean name
     private static final String MYSQL_SESSION_FACTORY = "mysqlSessionFactory";
@@ -21,7 +21,7 @@ public class MyBatisConfiguration {
 
     @Primary
     @Bean(name = MYSQL_SESSION_FACTORY, destroyMethod = "")
-    public SqlSessionFactoryBean mysqlSqlSessionFactory(@Named(DatabaseConfiguration.MYSQL_DATASOURCE) final DataSource thirdDataSource)
+    public SqlSessionFactoryBean mysqlSqlSessionFactory(@Named(DatasourceConfigurationAhead.MYSQL_DATASOURCE) final DataSource thirdDataSource)
             throws Exception {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(thirdDataSource);
@@ -31,7 +31,7 @@ public class MyBatisConfiguration {
     }
 
     @Bean(name = SQLSERVER_SESSION_FACTORY, destroyMethod = "")
-    public SqlSessionFactoryBean sqlserverSqlSessionFactory(@Named(DatabaseConfiguration.SQLSERVER_DATASOURCE) final DataSource fourthDataSource)
+    public SqlSessionFactoryBean sqlserverSqlSessionFactory(@Named(DatasourceConfigurationAhead.SQLSERVER_DATASOURCE) final DataSource fourthDataSource)
             throws Exception {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(fourthDataSource);

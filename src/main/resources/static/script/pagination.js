@@ -270,6 +270,9 @@ $.getJSON('http://localhost:8080/get_all_file_info', function(data) {
 
     console.log(data)
 
+    // 去除JSON中的第一个对象，因为储存的信息是username而不是fileinfo
+
+
     var state = {
         'querySet': data,
         'page': 1, // 加载页面后，默认显示的页号
@@ -282,9 +285,6 @@ $.getJSON('http://localhost:8080/get_all_file_info', function(data) {
             $(this).css("color", "red");
         });
     });
-
-
-
 
     buildTable() // 初始化，默认先显示第一页
 

@@ -1,7 +1,6 @@
 package com.webencyclop.demo.controller;
 
 import com.webencyclop.demo.mappers.MysqlMapper;
-import com.webencyclop.demo.model.mysql.Fileinfo;
 import com.webencyclop.demo.service.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -62,21 +60,27 @@ public class AuthenticationController {
 	@RequestMapping(value = "/employee/approved", method = RequestMethod.GET)
 	public ModelAndView employeeApproved() {
 
-		//
-//		WebContext wc = new
-
-		List<Fileinfo> fis = mysqlMapper.getAllFileinfo(); // query
 		List<Map<String, Object>> result = new ArrayList<>();
-		for (Fileinfo fi : fis) {
-			Map<String, Object> model = new HashMap<>();
-			model.put("name", fi.getName());
-			model.put("size", fi.getSize());
-			model.put("upload_date", fi.getUpload_date());
-			result.add(model);
-		}
 
-		ModelAndView modelAndView = new ModelAndView("employee/approved", "result", result);
-		return modelAndView;
+//		from course: Upgrade from JSP to Thymeleaf with SpringMVC and Spring Boot
+//		Episode 13 - Extracting data from a modeul map
+//
+//		Map<String, Object> model = new HashMap<>();
+//		model.put("username", UserInfo.getUsername());
+//		result.add(model);
+//
+//		List<Fileinfo> fis = mysqlMapper.getAllFileinfo(); // query
+//		for (Fileinfo fi : fis) {
+//			model = new HashMap<>();
+//			model.put("name", fi.getName());
+//			model.put("size", fi.getSize());
+//			model.put("upload_date", fi.getUpload_date());
+//			result.add(model);
+//		}
+//
+//		ModelAndView modelAndView = new ModelAndView("employee/approved", "result", result);
+
+		return new ModelAndView("employee/approved", "username", UserInfo.getUsername());
 
 	}
 
